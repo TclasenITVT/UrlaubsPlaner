@@ -43,15 +43,15 @@ namespace UrlaubsPlaner
         private void Button_save_Click(object sender, EventArgs e)
         {
             // SELECT a.AbsenceTypeId FROM a AS DbContext.AbsenceTypes WHERE a.Label == combobox_reason.SelectedText;
-            var absenceQuery = from a in DbContext.AbsenceTypes
+            var absenceQuery = from a in DbContext.AbsenceType
                                where a.Label == combobox_absencetype.SelectedText
                                select a;
 
-            var employeeQuery = from employee in DbContext.Employees
+            var employeeQuery = from employee in DbContext.Employee
                                 where employee.EmployeeNumber == int.Parse(textbox_employeeNumber.Text)
                                 select employee;
 
-            DbContext.Absences.Add(new Absence()
+            DbContext.Absence.Add(new Absence()
             {
                 AbsenceID = new Guid(),
                 AbsenceType = absenceQuery.First(),
