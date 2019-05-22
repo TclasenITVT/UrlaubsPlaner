@@ -9,7 +9,7 @@ namespace UrlaubsPlaner.Entities
 {
     public class DataBaseContext : DbContext
     {
-        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Employee> Employees { get; set; }
         public DbSet<Absence> Absence { get; set; }
         public DbSet<AbsenceType> AbsenceType { get; set; }
         public DbSet<Country> Country { get; set; }

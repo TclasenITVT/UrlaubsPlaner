@@ -47,7 +47,7 @@ namespace UrlaubsPlaner
                                where a.Label == combobox_absencetype.SelectedText
                                select a;
 
-            var employeeQuery = from employee in DbContext.Employee
+            var employeeQuery = from employee in DbContext.Employees
                                 where employee.EmployeeNumber == int.Parse(textbox_employeeNumber.Text)
                                 select employee;
 
